@@ -47,7 +47,7 @@ void OledTask(void)
 #endif
 
     /* ========== Demo B: 显示限制 ========== */
-#if 1
+#if 0
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 10000);
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 114514);
     ssd1306_printf("%s", "DUT!大连理工大学 is good!");
@@ -56,7 +56,7 @@ void OledTask(void)
 #endif
 
     /* ========== Demo C: 带 ClearOLED 的循环 ========== */
-#if 0
+#if 1
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         ssd1306_ClearOLED();
