@@ -56,7 +56,7 @@ void OledTask(void)
 #endif
 
     /* ========== Demo C: 带 ClearOLED 的循环 ========== */
-#if 1
+#if 0
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         ssd1306_ClearOLED();
@@ -65,7 +65,7 @@ void OledTask(void)
 #endif
 
     /* ========== Demo D: 不带 ClearOLED 的循环 ========== */
-#if 0
+#if 1
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         osal_msleep(50);
