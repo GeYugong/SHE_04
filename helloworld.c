@@ -38,35 +38,39 @@ void OledTask(void)
     ssd1306_Init();
     ssd1306_Fill(Black);
 
-    /* ===== Demo A: 验证显示规则 ===== */
+    /* ========== Demo A: 显示规则 ==========
+     * 每次只打开一个 Demo, 其他三个 #if 0 关掉
+     */
+#if 1
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 1000);
-    ssd1306_printf("%s", "Hello Claude!");
-    osal_msleep(8000);   /* 停 8 秒看效果拍照 */
+    ssd1306_printf("%s", "Hello GeYugong!");
+#endif
 
-    /* ===== Demo B: 验证显示限制 ===== */
-    ssd1306_ClearOLED();
-    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 10000);   /* 19 字符 -> 丢最后一个 */
-    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 114514);  /* 20+ 字符 -> 空行 */
-    ssd1306_printf("%s", "Man!瓦特 can I say?");                         /* 含中文 -> 空行 */
-    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 1000);    /* 正常 18 字符 */
-    ssd1306_printf("%s", "Man!What can I say?");                         /* 第 5 行超出屏幕 */
-    osal_msleep(8000);
+    /* ========== Demo B: 显示限制 ========== */
+#if 0
+    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 10000);
+    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 114514);
+    ssd1306_printf("%s", "DUT!大连理工大学 is good!");
+    ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 1000);
+    ssd1306_printf("%s", "This line overflow!");
+#endif
 
-    /* ===== Demo C: 带 ClearOLED 的循环 ===== */
-    ssd1306_ClearOLED();
+    /* ========== Demo C: 带 ClearOLED 的循环 ========== */
+#if 0
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         ssd1306_ClearOLED();
         osal_msleep(50);
     }
-    osal_msleep(3000);
+#endif
 
-    /* ===== Demo D: 不带 ClearOLED 的循环 ===== */
-    ssd1306_ClearOLED();
+    /* ========== Demo D: 不带 ClearOLED 的循环 ========== */
+#if 0
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         osal_msleep(50);
     }
+#endif
 
     while (1) {
         osal_msleep(1000);
