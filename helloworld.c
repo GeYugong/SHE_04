@@ -41,13 +41,13 @@ void OledTask(void)
     /* ========== Demo A: 显示规则 ==========
      * 每次只打开一个 Demo, 其他三个 #if 0 关掉
      */
-#if 1
+#if 0
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 1000);
     ssd1306_printf("%s", "Hello GeYugong!");
 #endif
 
     /* ========== Demo B: 显示限制 ========== */
-#if 0
+#if 1
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 10000);
     ssd1306_printf("%05dLx %02dC %02dRH", 66666, (uint16_t)10, 114514);
     ssd1306_printf("%s", "DUT!大连理工大学 is good!");
