@@ -37,6 +37,15 @@ void OledTask(void)
 
     ssd1306_Init();
     ssd1306_Fill(Black);
+    
+    
+
+
+
+
+
+    
+    
 
     /* ========== Demo A: 显示规则 ==========
      * 每次只打开一个 Demo, 其他三个 #if 0 关掉
@@ -65,7 +74,7 @@ void OledTask(void)
 #endif
 
     /* ========== Demo D: 不带 ClearOLED 的循环 ========== */
-#if 1
+#if 0
     for (int i = 1; i < 200; i++) {
         ssd1306_printf("%d", i);
         osal_msleep(50);
