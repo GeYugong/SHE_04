@@ -1,11 +1,4 @@
 #==============================================================================
-# @brief    Kconfig file.
+# @brief    Kconfig file for DEMO01 sample.
 # Copyright (c) HiSilicon (Shanghai) Technologies Co., Ltd. 2023-2023. All rights reserved.
 #==============================================================================
-config SAMPLE_SUPPORT_DEMO01
-    bool
-    prompt "Support DEMO01 Sample."
-    default n
-    depends on SAMPLE_SUPPORT_PERIPHERAL
-    help
-        This option means support DEMO01 Sample (BH1750 + CW2015 I2C demo).
