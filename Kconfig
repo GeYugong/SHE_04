@@ -1,15 +1,11 @@
-#===============================================================================
+#==============================================================================
 # @brief    Kconfig file.
 # Copyright (c) HiSilicon (Shanghai) Technologies Co., Ltd. 2023-2023. All rights reserved.
-#===============================================================================
-config WDT_TIMEOUT_SAMPLE
+#==============================================================================
+config SAMPLE_SUPPORT_DEMO01
     bool
-    prompt "Choose watchdog kick timeout."
-    depends on SAMPLE_SUPPORT_WDT
+    prompt "Support DEMO01 Sample."
     default n
-
-config WDT_KICK_SAMPLE
-    bool
-    prompt "Choose watchdog kick normally."
-    depends on SAMPLE_SUPPORT_WDT
-    default n
+    depends on SAMPLE_SUPPORT_PERIPHERAL
+    help
+        This option means support DEMO01 Sample (BH1750 + CW2015 I2C demo).
