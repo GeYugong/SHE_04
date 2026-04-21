@@ -48,21 +48,20 @@ static void *demo01_task(const char *arg)
     uapi_i2c_master_init(CONFIG_I2C_MASTER_BUS_ID, baudrate, hscode);
 
     /* ========== 实验 1：BH1750 ========== */
-    bh1750_init();
-    while (1) {
-        osal_msleep(DEMO01_TASK_DURATION_MS);
-        uint16_t lightness = bh1750_GetLightIntensity();
-        osal_printk("BH1750:%05d\r\n", lightness);
-    }
+    // bh1750_init();
+    // while (1) {
+    //     osal_msleep(DEMO01_TASK_DURATION_MS);
+    //     uint16_t lightness = bh1750_GetLightIntensity();
+    //     osal_printk("BH1750:%05d\r\n", lightness);
+    // }
 
-    /* ========== 实验 2：CW2015（做第二个实验时，注释掉上面 BH1750 那段，取消下面注释）==========
+    //========== 实验 2：CW2015（做第二个实验时，注释掉上面 BH1750 那段，取消下面注释）==========
     cw2015_init();
     while (1) {
         osal_msleep(DEMO01_TASK_DURATION_MS);
         uint32_t BatteryVoltage = cw2015_GetBatteryVoltage();
         osal_printk("CW2015:%010d\r\n", BatteryVoltage);
     }
-    */
 
     return NULL;
 }
